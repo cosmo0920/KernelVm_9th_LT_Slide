@@ -1,5 +1,38 @@
-\documentclass[slide,papersize]{jsarticle}
-\usepackage[dvipdfmx]{graphicx,color}
+%\documentclass[slide,papersize]{jsarticle}
+%\usepackage[dvipdfmx]{graphicx,color}
+\documentclass[18pt,compress,dvipdfm]{beamer}
+%%%% handoutを指定すると印刷用にフォーマット
+% \documentclass[compress,dvipdfm,handout]{beamer}
+%%%% しおりが文字化けしないための対策
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+%%%% テーマの指定
+% \usetheme{Warsaw}
+\usetheme{Antibes}
+% \usetheme{Berkeley}
+% \usetheme{PaloAlto}
+% \usetheme{Berlin}
+% \usetheme{Luebeck}
+%%%% カラーテーマの指定
+% \usecolortheme{lily}
+%%%% フォントテーマの指定
+\usefonttheme{structurebold}
+%%%% 日本語のフォントをゴシックにする
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+%%%% structureカラーの指定
+% \setbeamercolor{structure}{fg=blue!60!black}
+%%%% alertカラーの指定
+% \setbeamercolor{alerted text}{fg=red!80!black}
+\setbeamertemplate{blocks}[rounded]
+\setbeamertemplate{navigation symbols}{}
+%%%% ロゴを入れる
+% \logo{\raisebox{-1.5zw}{\includegraphics[width=5zw]{logo.png}}}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{alltt}
+%%%% 後ろで利用しているマクロの定義
+\newcommand{\hi}[1]{\temporal<#1>{\color{gray}}{\color{black}}{\color{lightgray}}}
+\newcommand{\gotobutton}[1]{\raisebox{-0.15ex}{\beamergotobutton{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \title{mikutterとRuby-GNOME2の切っても切れない関係}
@@ -11,6 +44,8 @@
 \include{slide/intro}
 \include{slide/bugreport}
 \include{slide/pullrequest}
+\include{slide/developrg2}
 \include{slide/devrg2}
+\include{slide/problemofrb2}
 
 \end{document}
